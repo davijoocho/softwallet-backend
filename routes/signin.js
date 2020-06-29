@@ -5,7 +5,7 @@ const db = require('../database/dbconfig.js');
 const bcrypt = require('bcrypt');
 
 router.route('/')
-.get(signIn.signInVerification(bcrypt, db))
+.post(signIn.signInVerification(bcrypt, db))
 
 
 module.exports = router;

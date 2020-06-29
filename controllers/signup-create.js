@@ -21,7 +21,7 @@ const createNewAccount = (bcrypt, db) => (req, res) => {
             const user = await client.query(insertUserInfoQuery, userInfoValues);
     
             await client.query('COMMIT');
-            res.status(201).json(user.rows[0].name);
+            res.status(201).json(user.rows[0]);
 
         } catch (err) {
 
