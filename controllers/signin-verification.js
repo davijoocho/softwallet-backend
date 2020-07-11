@@ -13,31 +13,20 @@ const signInVerification = (bcrypt, db) => async (req, res) => {
     const userProfile = await db.query(selectUserProfileQuery, providedUserEmail);
 
     if(userCred.rows[0] == undefined) {
-
         res.status(400).json('sign in unsuccessful');
-
     } else {
-        
         bcrypt.compare(password, userCred.rows[0].secret, (err, result) => {
 
         if(result){
-
             res.status(200).json(userProfile.rows[0]);
-
         } else {
-
             res.status(400).json(err);
-
         }    
-
       });
-
     } 
-
+    
     } catch (err) {
-
     res.status(400).json(err);
-
     }
 
 
