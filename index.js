@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const signInRoute = require('./routes/signin.js'); 
 const signUpRoute = require('./routes/signup.js');
+const dashboardRoute = require('./routes/dashboard.js');
 
 
 
@@ -17,6 +18,11 @@ app.use('/signup', signUpRoute);
 //Middleware for Sign-In Routes
 
 app.use('/signin', signInRoute);
+
+//Middleware for Dashbaord Routes
+
+app.use('/dashboard', dashboardRoute);
+
 
 
 
