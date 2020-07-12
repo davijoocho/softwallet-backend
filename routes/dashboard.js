@@ -1,18 +1,27 @@
 const express = require('express');
 const router = express.Router()
 const db = require('../database/dbconfig.js');
-const transactions = require('../controllers/transaction-post.js');
+const postTransactions = require('../controllers/transaction-post.js');
+const deleteTransactions = require('../controllers/transaction-delete.js');
+const getTransactions = require('../controllers/transaction-get.js');
 
 router.route('/income')
-.post(transactions.postTransaction(db))
+.post(postTransactions.postTransaction(db))
+.delete(deleteTransactions.deleteTransaction(db))
 
 router.route('/assets')
-.post(transactions.postTransaction(db))
+.post(postTransactions.postTransaction(db))
+.delete(deleteTransactions.deleteTransaction(db))
 
 router.route('/liabilities')
-.post(transactions.postTransaction(db))
+.post(postTransactions.postTransaction(db))
+.delete(deleteTransactions.deleteTransaction(db))
 
 router.route('/expenses')
-.post(transactions.postTransaction(db))
+.post(postTransactions.postTransaction(db))
+.delete(deleteTransactions.deleteTransaction(db))
+
+router.route('/')
+.get(getTransactions.getTransaction(db))
 
 module.exports = router;
