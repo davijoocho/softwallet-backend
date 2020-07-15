@@ -5,6 +5,7 @@ const signInRoute = require('./routes/signin.js');
 const signUpRoute = require('./routes/signup.js');
 const dashboardRoute = require('./routes/dashboard.js');
 const accessTokenRoute = require('./routes/access-token.js');
+const getBalanceRoute = require('./routes/bank-balance.js');
 
 
 
@@ -12,12 +13,11 @@ const accessTokenRoute = require('./routes/access-token.js');
 app.use(express.json());
 app.use(cors());
 
+//Middleware for Get Balance Route
 
+app.use('/get_balance', getBalanceRoute);
 
-//app.get('/get_balance')
-//Link to get access token
-//After user has access token just use that to get the balance everytime 
-
+//Middleware for Get Access Token Route
 
 app.use('/get_access_token', accessTokenRoute);
 
