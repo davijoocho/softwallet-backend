@@ -10,7 +10,6 @@ const getTransaction = (db) => async (req, res) => {
     try {
 
         const transactionList = await db.query(selectResultingTransactionQuery, selectResultingTransactionValue) 
-
         res.status(200).json(transactionList.rows)
 
     } catch (err) {
