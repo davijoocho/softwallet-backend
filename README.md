@@ -24,10 +24,3 @@ A web application for managing your budget
    * **Third-Party API Integration** :
      * Plaid 
   
-
-## Screenshots
-
-<img src="./readme/signin-page.png" width="600" height="340"> 
-<img src="./readme/signup-page.png" width="600" height="340"> 
-<img src="./readme/dashboard-expenses.png" width="600" height="340">
-<img src="./readme/dashboard-page.png" width="600" height="340">
